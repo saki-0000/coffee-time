@@ -22,7 +22,7 @@ export default defineComponent({
       }, 1000)
     }
     const time = ref(180)
-    const formatTime = (time) => {
+    const formatTime = (time: number) => {
       return format(new Date(0, 0, 0, 0, 0, time), 'mm:ss')
     }
     const countDown = () => {
