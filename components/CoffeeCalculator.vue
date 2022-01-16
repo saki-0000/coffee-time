@@ -1,7 +1,17 @@
 <template>
   <div>
-    <v-text-field v-model="weight" />
-    {{ weight }}
+    <v-text-field
+      label="コーヒー豆の量"
+      hint="今日はどのくらい淹れますか？"
+      :rules="rules"
+      v-model="coffee"
+    />
+    <div class="text">
+      コーヒー{{ coffee }}gに必要な お湯の量は{{ water(coffee) }}です。
+    </div>
+    <div class="text">１湯目：{{ water(coffee) * 0.2 }}</div>
+    <div class="text">２湯目：{{ water(coffee) * 0.2 }}</div>
+    <div class="text">３湯目：{{ water(coffee) * 0.6 }}</div>
   </div>
 </template>
 
@@ -10,7 +20,17 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   setup: (props, context) => {
-    return { weight: 0 }
+    const water = (coffee: number) => {
+      return coffee * (100 / 7)
+    }
+    const isNum = (val: any) => {
+      return !isNaN(val)
+    }
+    const validNum = (val: any) => {
+      return isNum(val) ? true : '数字で入力してください。'
+    }
+    const rules = [validNum]
+    return { coffee: 0, water, rules }
   },
 })
 </script>
