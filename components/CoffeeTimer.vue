@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn @click="startTimer" :disabled="disabled">{{ buttonLabel() }}</v-btn>
+    <v-btn :disabled="disabled" @click="startTimer">{{ buttonLabel() }}</v-btn>
     {{ formatTime(time) }}
   </div>
 </template>
@@ -10,7 +10,7 @@ import { defineComponent, ref } from '@vue/composition-api'
 import { format } from 'date-fns'
 
 export default defineComponent({
-  setup: (props, context) => {
+  setup: () => {
     const disabled = ref(false)
     const startTimer = () => {
       disabled.value = true
@@ -21,7 +21,7 @@ export default defineComponent({
         }
       }, 1000)
     }
-    let time = ref(180)
+    const time = ref(180)
     const formatTime = (time) => {
       return format(new Date(0, 0, 0, 0, 0, time), 'mm:ss')
     }

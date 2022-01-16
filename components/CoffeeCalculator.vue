@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-text-field
+      v-model="coffee"
       label="コーヒー豆の量"
       hint="今日はどのくらい淹れますか？"
       :rules="rules"
-      v-model="coffee"
     />
     <div class="text">
       コーヒー{{ coffee }}gに必要な お湯の量は{{ water(coffee) }}です。
@@ -19,7 +19,7 @@
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-  setup: (props, context) => {
+  setup: () => {
     const water = (coffee: number) => {
       return coffee * (100 / 7)
     }
