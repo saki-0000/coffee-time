@@ -14,7 +14,7 @@
 <script>
 import CoffeeCalculator from '../components/CoffeeCalculator.vue'
 export default {
-  components: { CoffeeCalculator },
   name: 'IndexPage',
+  components: { CoffeeCalculator },
 }
 </script>
