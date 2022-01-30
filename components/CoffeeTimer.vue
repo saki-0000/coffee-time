@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, Ref, ref, watchEffect } from '@vue/composition-api'
-import Timer from './Timer.vue'
+import Timer from './PureTimer.vue'
 
 const changeLabel = (time: number, label: Ref<String>) => {
   switch (time) {

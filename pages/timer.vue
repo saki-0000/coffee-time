@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import Timer from '../components/Timer.vue'
+import Timer from '../components/PureTimer.vue'
 export default defineComponent({
   name: 'TimerPage',
   components: { Timer },
