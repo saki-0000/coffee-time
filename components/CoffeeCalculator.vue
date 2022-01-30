@@ -7,11 +7,13 @@
       :rules="rules"
     />
     <div class="text">
-      コーヒー{{ coffee }}gに必要な お湯の量は{{ water(coffee) }}です。
+      コーヒー{{ coffee }}gに必要な お湯の量は{{
+        water(coffee).toFixed(1)
+      }}mlです。
     </div>
-    <div class="text">１湯目：{{ water(coffee) * 0.2 }}</div>
-    <div class="text">２湯目：{{ water(coffee) * 0.2 }}</div>
-    <div class="text">３湯目：{{ water(coffee) * 0.6 }}</div>
+    <div class="text">１湯目：{{ (water(coffee) * 0.2).toFixed(1) }}ml</div>
+    <div class="text">２湯目：{{ (water(coffee) * 0.2).toFixed(1) }}ml</div>
+    <div class="text">３湯目：{{ (water(coffee) * 0.6).toFixed(1) }}ml</div>
   </div>
 </template>
 
