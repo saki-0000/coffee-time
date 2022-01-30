@@ -1,55 +1,40 @@
 <template>
-  <div>
-    <v-btn :disabled="disabled" @click="startTimer">{{ buttonLabel() }}</v-btn>
-    {{ formatTime(time) }}
-  </div>
+  <Timer @change="time = $event">{{ label }}</Timer>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
-import { format } from 'date-fns'
+import { defineComponent, Ref, ref, watchEffect } from '@vue/composition-api'
+import Timer from './Timer.vue'
 
+const changeLabel = (time: number, label: Ref<String>) => {
+  switch (time) {
+    case 180 - 1:
+      label.value = '1湯目...'
+      break
+    case 120 - 1:
+      label.value = '2湯目...'
+      break
+    case 60 - 1:
+      label.value = '3湯目...'
+      break
+    case 0:
+      label.value = 'Have a Good Time!'
+      break
+    default:
+      break
+  }
+  return label
+}
 export default defineComponent({
+  components: { Timer },
   setup: () => {
-    const disabled = ref(false)
-    const startTimer = () => {
-      disabled.value = true
-      const intervalId = setInterval(() => {
-        countDown()
-        if (time.value === 0) {
-          clearInterval(intervalId)
-        }
-      }, 1000)
-    }
     const time = ref(180)
-    const formatTime = (time: number) => {
-      return format(new Date(0, 0, 0, 0, 0, time), 'mm:ss')
-    }
-    const countDown = () => {
-      time.value--
-    }
-    const buttonLabel = () => {
-      let label = 'コーヒーを淹れる'
-      if (time.value < 180) {
-        label = '1湯目...'
-      }
-      if (time.value < 120) {
-        label = '2湯目...'
-      }
-      if (time.value < 60) {
-        label = '3湯目...'
-      }
-      if (time.value === 0) {
-        label = 'Have a Good Time!'
-      }
-      return label
-    }
+    const label = ref('コーヒーを淹れる')
+    watchEffect(() => changeLabel(time.value, label))
     return {
-      disabled,
       time,
-      startTimer,
-      formatTime,
-      buttonLabel,
+      label,
+      changeLabel,
     }
   },
 })
