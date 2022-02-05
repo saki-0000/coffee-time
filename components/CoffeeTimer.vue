@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent, Ref, ref, watchEffect } from '@nuxtjs/composition-api'
-import Timer from './PureTimer.vue'
+import Timer from './ThreeMinutesTimer.vue'
 
 const changeLabel = (time: number, label: Ref<String>) => {
   switch (time) {
