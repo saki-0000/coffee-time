@@ -19,7 +19,7 @@ export default defineComponent({
   emits: ['change'],
   setup: (_, context) => {
     const { measureTime, time, formatTime } = useTimer()
-    let disabled = ref(false)
+    const disabled = ref(false)
     watchEffect(() => {
       context.emit('change', time)
     })
