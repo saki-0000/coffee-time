@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref, watchEffect } from '@vue/composition-api'
+import { defineComponent, Ref, ref, watchEffect } from '@nuxtjs/composition-api'
 import Timer from './PureTimer.vue'
 
 const changeLabel = (time: number, label: Ref<String>) => {
