@@ -21,7 +21,7 @@ export default defineComponent({
     const { measureTime, time, formatTime } = useTimer()
     const disabled = ref(false)
     watchEffect(() => {
-      context.emit('change', time)
+      context.emit('change', time.value)
     })
     const onClick = () => {
       disabled.value = true
