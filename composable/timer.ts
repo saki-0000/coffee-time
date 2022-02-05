@@ -1,7 +1,7 @@
 import { ref, computed } from '@nuxtjs/composition-api'
 import { format } from 'date-fns'
 
-export const useTimer = (initTime = 180) => {
+export const useTimer = () => {
   const _time = ref(180)
   const countDown = () => _time.value--
   const measureTime = () => {
