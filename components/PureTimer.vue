@@ -6,21 +6,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref, watchEffect } from '@vue/composition-api'
-import { format } from 'date-fns'
-
-const measureTime = (time: Ref<number>) => {
-  const intervalId = setInterval(() => {
-    time.value--
-    if (time.value === 0) {
-      clearInterval(intervalId)
-    }
-  }, 1000)
-}
-
-const formatTime = (time: number) => {
-  return format(new Date(0, 0, 0, 0, 0, time), 'mm:ss')
-}
+import { defineComponent, ref, watchEffect } from '@nuxtjs/composition-api'
+import { useTimer } from '~/composable/timer'
 
 export default defineComponent({
   props: {
@@ -30,18 +17,15 @@ export default defineComponent({
     },
   },
   emits: ['change'],
-  setup: (props, context) => {
+  setup: (_, context) => {
+    const { measureTime, time, formatTime } = useTimer()
     const disabled = ref(false)
-    const time = ref(props.second)
     watchEffect(() => {
-      time.value = props.second
-    })
-    watchEffect(() => {
-      context.emit('change', time.value)
+      context.emit('change', time)
     })
     const onClick = () => {
       disabled.value = true
-      measureTime(time)
+      measureTime()
     }
     return {
       disabled,
