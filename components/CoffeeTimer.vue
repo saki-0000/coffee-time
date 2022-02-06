@@ -1,9 +1,9 @@
 <template>
-  <Timer @change="label = getLabel($event)">{{ label }}</Timer>
+  <Timer @change="time = $event">{{ label }}</Timer>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@nuxtjs/composition-api'
+import { computed, defineComponent, ref } from '@nuxtjs/composition-api'
 import Timer from './ThreeMinutesTimer.vue'
 import { useCoffeeTimer } from '~/composable/coffee-timer'
 
@@ -12,7 +12,7 @@ export default defineComponent({
   components: { Timer },
   setup: () => {
     const time = ref(180)
-    const label = ref('コーヒーを淹れる')
+    const label = computed(() => getLabel(time.value))
     return {
       time,
       label,
