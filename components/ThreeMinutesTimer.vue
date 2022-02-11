@@ -1,6 +1,8 @@
 <template>
   <div>
-    <v-btn :disabled="disabled" @click="onClick"><slot>スタート</slot></v-btn>
+    <v-btn id="startButton" :disabled="disabled" @click="onClick"
+      ><slot>スタート</slot></v-btn
+    >
     {{ formatTime(time) }}
   </div>
 </template>
