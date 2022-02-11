@@ -3,7 +3,9 @@
     <v-btn id="startButton" :disabled="disabled" @click="onClick"
       ><slot>スタート</slot></v-btn
     >
-    {{ formatTime(time) }}
+    <span id="displayTime">
+      {{ formatTime(time) }}
+    </span>
   </div>
 </template>
 
