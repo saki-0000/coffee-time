@@ -24,19 +24,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@nuxtjs/composition-api'
+import { defineComponent } from '@nuxtjs/composition-api'
 import { isNum } from '~/util/helper'
+import { useCoffeeCaluculator } from '~/composable/coffee-caluculator'
 
+const { coffee, water, onInputWater, onInputCoffee } = useCoffeeCaluculator()
 export default defineComponent({
   setup: () => {
-    const coffee = ref(0)
-    const water = ref(0)
-    const onInputWater = () => {
-      coffee.value = Math.round(water.value * (7 / 100) * 10) / 10
-    }
-    const onInputCoffee = () => {
-      water.value = Math.round(coffee.value * (100 / 7) * 10) / 10
-    }
     const validNum = (val: any) => {
       return isNum(val) ? true : '数字で入力してください。'
     }
