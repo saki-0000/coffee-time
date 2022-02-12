@@ -1,4 +1,4 @@
-import { mount, Wrapper } from '@vue/test-utils'
+import { shallowMount, Wrapper } from '@vue/test-utils'
 import ThreeMinutesTimer from '~/components/ThreeMinutesTimer.vue'
 import * as composable from '~/composable/timer'
 
@@ -16,21 +16,22 @@ jest.mock('~/composable/timer', () => ({
 describe('ThreeMinutesTimer.vue', () => {
   let wrapper: Wrapper<any>
   beforeEach(() => {
-    wrapper = mount(ThreeMinutesTimer)
+    wrapper = shallowMount(ThreeMinutesTimer)
   })
 
   test('renders correctly', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   test('call useTime`s functions when the `start` button clicked ', () => {
-    wrapper.get('#startButton').trigger('click')
+    wrapper.get('#startButton').vm.$emit('click')
     expect(measureTime).toHaveBeenCalledTimes(1)
+    // TODO：本当は2回目の呼び出し時の引数をチェックしたい
     expect(formatTime).toHaveBeenCalledTimes(2)
     expect(wrapper.get('#displayTime').text()).toBe('100')
   })
   test('v-btn to be disabled when the `start` button clicked ', async () => {
-    wrapper.get('#startButton').trigger('click')
+    wrapper.get('#startButton').vm.$emit('click')
     await wrapper.vm.$nextTick()
-    expect(wrapper.get('#startButton').attributes().disabled).toBe('disabled')
+    expect(wrapper.get('#startButton').attributes().disabled).toBe('true')
   })
 })

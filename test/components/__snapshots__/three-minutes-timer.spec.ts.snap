@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThreeMinutesTimer.vue renders correctly 1`] = `
-"<div><button type=\\"button\\" class=\\"v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default\\" id=\\"startButton\\"><span class=\\"v-btn__content\\">スタート</span></button> <span id=\\"displayTime\\">
+"<div>
+  <v-btn-stub tag=\\"button\\" activeclass=\\"\\" type=\\"button\\" id=\\"startButton\\">スタート</v-btn-stub> <span id=\\"displayTime\\">
     100
-  </span></div>"
+  </span>
+</div>"
 `;
