@@ -16,7 +16,6 @@ export default defineComponent({
     return {
       time,
       label,
-      getLabel,
     }
   },
 })
