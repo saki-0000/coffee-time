@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-text-field
+      id="waterInput"
       v-model="water"
       label="お湯の量"
       hint="今日はどのくらい淹れますか？"
@@ -8,18 +9,25 @@
       @input="onInputWater()"
     />
     <v-text-field
+      id="coffeeInput"
       v-model="coffee"
       label="コーヒー豆の量"
       hint="今日はどのくらい淹れますか？"
       :rules="rules"
       @input="onInputCoffee()"
     />
-    <div class="text">
+    <div id="summuryText" class="text mb-3">
       コーヒー{{ coffee }}gに必要な お湯の量は{{ water }}mlです。
     </div>
-    <div class="text">１湯目：{{ (water * 0.2).toFixed(1) }}ml</div>
-    <div class="text">２湯目：{{ (water * 0.2).toFixed(1) }}ml</div>
-    <div class="text">３湯目：{{ (water * 0.6).toFixed(1) }}ml</div>
+    <div id="firstText" class="text">
+      １湯目：{{ (water * 0.2).toFixed(1) }}ml
+    </div>
+    <div id="secondText" class="text">
+      ２湯目：{{ (water * 0.2).toFixed(1) }}ml
+    </div>
+    <div id="thirdText" class="text">
+      ３湯目：{{ (water * 0.6).toFixed(1) }}ml
+    </div>
   </div>
 </template>
 
