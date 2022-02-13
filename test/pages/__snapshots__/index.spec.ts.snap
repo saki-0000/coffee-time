@@ -7,7 +7,7 @@ exports[`CoffeeCalculator.vue renders correctly 1`] = `
       <coffeecalculator-stub></coffeecalculator-stub>
     </v-card-stub>
     <v-card-stub loaderheight=\\"4\\" tag=\\"div\\" class=\\"logo py-4 d-flex justify-center\\">
-      <coffeetimer></coffeetimer>
+      <coffeetimer-stub></coffeetimer-stub>
     </v-card-stub>
   </v-col-stub>
 </v-row-stub>"

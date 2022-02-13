@@ -12,9 +12,10 @@
 </template>
 
 <script>
-import CoffeeCalculator from '../components/CoffeeCalculator.vue'
+import CoffeeCalculator from '~/components/CoffeeCalculator.vue'
+import CoffeeTimer from '~/components/CoffeeTimer.vue'
 export default {
   name: 'IndexPage',
-  components: { CoffeeCalculator },
+  components: { CoffeeCalculator, CoffeeTimer },
 }
 </script>
