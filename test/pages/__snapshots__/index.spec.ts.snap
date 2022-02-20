@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoffeeCalculator.vue renders correctly 1`] = `
+"<v-row-stub tag=\\"div\\" align=\\"center\\" justify=\\"center\\">
+  <v-col-stub cols=\\"12\\" sm=\\"8\\" md=\\"6\\" tag=\\"div\\">
+    <v-card-stub loaderheight=\\"4\\" tag=\\"div\\" class=\\"logo py-4 d-flex justify-center\\">
+      <coffeecalculator-stub></coffeecalculator-stub>
+    </v-card-stub>
+    <v-card-stub loaderheight=\\"4\\" tag=\\"div\\" class=\\"logo py-4 d-flex justify-center\\">
+      <coffeetimer-stub></coffeetimer-stub>
+    </v-card-stub>
+  </v-col-stub>
+</v-row-stub>"
+`;

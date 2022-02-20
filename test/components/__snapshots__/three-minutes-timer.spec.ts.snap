@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThreeMinutesTimer.vue renders correctly 1`] = `
+"<div>
+  <v-btn-stub tag=\\"button\\" activeclass=\\"\\" type=\\"button\\" id=\\"startButton\\">スタート</v-btn-stub> <span id=\\"displayTime\\">
+    100
+  </span>
+</div>"
+`;

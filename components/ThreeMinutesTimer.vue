@@ -1,7 +1,11 @@
 <template>
   <div>
-    <v-btn :disabled="disabled" @click="onClick"><slot>スタート</slot></v-btn>
-    {{ formatTime(time) }}
+    <v-btn id="startButton" :disabled="disabled" @click="onClick"
+      ><slot>スタート</slot></v-btn
+    >
+    <span id="displayTime">
+      {{ formatTime(time) }}
+    </span>
   </div>
 </template>
 
@@ -21,7 +25,7 @@ export default defineComponent({
     const { measureTime, time, formatTime } = useTimer()
     const disabled = ref(false)
     watchEffect(() => {
-      context.emit('change', time)
+      context.emit('change', time.value)
     })
     const onClick = () => {
       disabled.value = true
