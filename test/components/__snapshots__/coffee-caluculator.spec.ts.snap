@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CoffeeCalculator.vue renders correctly 1`] = `
+"<div>
+  <v-text-field-stub errorcount=\\"1\\" errormessages=\\"\\" messages=\\"\\" rules=\\"[Function]\\" successmessages=\\"\\" value=\\"300\\" backgroundcolor=\\"\\" hint=\\"今日はどのくらい淹れますか？\\" id=\\"waterInput\\" label=\\"お湯の量\\" loaderheight=\\"2\\" clearicon=\\"$clear\\" type=\\"text\\"></v-text-field-stub>
+  <v-text-field-stub errorcount=\\"1\\" errormessages=\\"\\" messages=\\"\\" rules=\\"[Function]\\" successmessages=\\"\\" value=\\"21\\" backgroundcolor=\\"\\" hint=\\"今日はどのくらい淹れますか？\\" id=\\"coffeeInput\\" label=\\"コーヒー豆の量\\" loaderheight=\\"2\\" clearicon=\\"$clear\\" type=\\"text\\"></v-text-field-stub>
+  <div id=\\"summuryText\\" class=\\"text mb-3\\">
+    コーヒー21gに必要な お湯の量は300mlです。
+  </div>
+  <div id=\\"firstText\\" class=\\"text\\">
+    １湯目：60.0ml
+  </div>
+  <div id=\\"secondText\\" class=\\"text\\">
+    ２湯目：60.0ml
+  </div>
+  <div id=\\"thirdText\\" class=\\"text\\">
+    ３湯目：180.0ml
+  </div>
+</div>"
+`;

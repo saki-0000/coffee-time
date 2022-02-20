@@ -36,9 +36,10 @@ import { defineComponent } from '@nuxtjs/composition-api'
 import { isNum } from '~/util/helper'
 import { useCoffeeCaluculator } from '~/composable/coffee-caluculator'
 
-const { coffee, water, onInputWater, onInputCoffee } = useCoffeeCaluculator()
 export default defineComponent({
   setup: () => {
+    const { coffee, water, onInputWater, onInputCoffee } =
+      useCoffeeCaluculator()
     const validNum = (val: any) => {
       return isNum(val) ? true : '数字で入力してください。'
     }
