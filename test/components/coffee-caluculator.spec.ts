@@ -1,8 +1,8 @@
 import { shallowMount, Wrapper } from '@vue/test-utils'
 import CoffeeCalculator from '~/components/CoffeeCalculator.vue'
 
-let onInputWater = jest.fn(() => {})
-let onInputCoffee = jest.fn(() => {})
+const onInputWater = jest.fn(() => {})
+const onInputCoffee = jest.fn(() => {})
 jest.mock('~/composable/coffee-caluculator', () => ({
   useCoffeeCaluculator: () => ({
     coffee: 21,

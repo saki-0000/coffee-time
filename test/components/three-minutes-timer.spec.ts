@@ -1,9 +1,9 @@
 import { shallowMount, Wrapper } from '@vue/test-utils'
 import ThreeMinutesTimer from '~/components/ThreeMinutesTimer.vue'
 
-let measureTime = jest.fn(() => {})
-let time = jest.fn(() => 100)
-let formatTime = jest.fn(() => '100')
+const measureTime = jest.fn(() => {})
+const time = jest.fn(() => 100)
+const formatTime = jest.fn(() => '100')
 jest.mock('~/composable/timer', () => ({
   useTimer: () => ({
     measureTime,
